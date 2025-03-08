@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90. gadu korporatīvā ballīte</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to right, #001f3f, #111);
+            color: gold;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background: url('corporate-banquet.jpg') no-repeat center center/cover;
+            padding: 80px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+            text-transform: uppercase;
+            color: #ff00ff;
+        }
+        .wordart {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffcc00;
+            text-shadow: 4px 4px 0px #0000ff;
+        }
+        .banner {
+            font-size: 30px;
+            font-weight: bold;
+            background: #ff0000;
+            color: yellow;
+            padding: 15px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px black;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0.5; }
+        }
+        .details, .props, .music, .countdown, .rsvp, .ticker-tape, .footer, .dresscode {
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 800px;
+            border: 3px solid #ff00ff;
+        }
+        .ticker-tape {
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            margin-top: 60px;
+        }
+        .ticker-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 25s linear infinite;
+            color: #00ff00;
+            font-size: 20px;
+        }
+        @keyframes ticker {
+            from { transform: translateX(0%); }
+            to { transform: translateX(-100%); }
+        }
+        .rsvp button {
+            background: linear-gradient(to right, #ff00ff, #ffcc00);
+            color: black;
+            font-size: 24px;
+            padding: 15px 30px;
+            border: 3px solid #0000ff;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Press Start 2P', cursive;
+            text-transform: uppercase;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+        }
+        .rsvp button:hover {
+            background: linear-gradient(to right, #ffcc00, #ff00ff);
+            box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.9);
+        }
+        .cassette-icon {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .footer {
+            font-size: 14px;
+            color: #cccccc;
+            text-align: center;
+            padding: 10px;
+        }
+        @keyframes colorBlink {
+            0% {
+                color: purple;
+            }
+            50% {
+                color: #00ff00;
+            }
+            100% {
+                color: purple;
+            }
+        }
+        .blink-link {
+            animation: colorBlink 1s infinite;
+        }
+    </style>
+    <script>
+        function countdown() {
+            const eventDate = new Date('March 29, 2025 14:00:00').getTime();
+            setInterval(() => {
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById('countdown').innerHTML = `Atlikušais laiks līdz ballītei: ${days} dienas, ${hours} stundas, ${minutes} minūtes`;
+            }, 1000);
+        }
+    </script>
+</head>
+<body onload="countdown()">
+    <div class="hero">Laipni lūgti uz <span class="wordart">90. gadu korporatīvās ballītes</span> banketu </br></br> ģērbies asi, tirgo gudri, svini ar vērienu!</div>
+    <div class="banner">!! Never Stop Panicking !!</div>
+    <div class="details">
+        <h2>📅 Datums: 29. marts</h2>
+        <h2>📍 Vieta: Kafejnīca Melnā Kamene, Ogre</h2>
+        <h2>⏰ Laiks: 14:00 - 21:00</h2>
+    </div>
+    <div class="dresscode">
+        <h2>Dreskods:</h2>
+        <p><strong>🎩 Kungi:</strong> Dubultrindas žaketes, platas plecu polsteres, spilgtas kaklasaites, bikses ar augstu jostasvietu vai arī džemperis, kas klasiski ievietots aiz jostas vietas.</p>
+        <p><strong>💃 Dāmas:</strong> Spēcīgi kostīmi ar svārkiem vai biksēm, lielas pērļu kaklarotas. Modē crop tops, slip kleitas, oversize džemperi un zemas jostas ar izteiksmīgiem dizainiem. Stils uzsver individualitāti un brīvību, ļaujot eksperimentēt ar aksesuāriem un unikāliem detaļu akcentiem. Matu laka "vējš-mūs-nebiedē" stilā.</p>
+        <!-- Jauna rinda ar attēliem -->
+        <div style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+          <!-- Piemērs, aizstāj ar saviem failu nosaukumiem -->
+          <img src="img/pink_party.webp" alt="90. gadu vīriešu stils" style="max-width:45%; border: 2px solid #ff00ff; border-radius: 10px;">
+          <img src="img/lady_in_red.webp" alt="90. gadu dāmu stils" style="max-width:45%; border: 2px solid #ff00ff; border-radius: 10px;">
+        </div>
+        <p style="margin-top: 20px;">Papildu iedvesmai:</br></br>
+          <a href="https://www.google.com/search?newwindow=1&sca_esv=08684afdbf066af7&sxsrf=AHTn8zp0QPOEy75rESZQJQsIyBTHurssGA:1741439165787&q=90s+corporate+fashion&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBpcx8kZB4NRoUjdgt8WwoMs7jebc2P25mD9bLva5PWN4JRBoRqueQxRpdV36vaPcFZfewy9D9ba1w7DAi_8GwWEwSjWtoXdLIKWcfZYxqcKMkOjKiiyfJoLKOgK2P-y0hdS0HEcrCGjUnt_6uQrbLQeXE9dF&sa=X&ved=2ahUKEwjRrP-2xvqLAxXlFBAIHZ4SJ-8QtKgLegQIDxAB&biw=1536&bih=695&dpr=1.25" target="_blank" class="blink-link" style="text-decoration: none; font-weight: bold;">
+            90s fashion
+          </a>
+        </p>
+    </div>
+    <div class="ticker-tape">
+        <div class="ticker-content">
+              SOFTWARE HOUSE RĪGA ↑ 12.4% | VEF ↓ 3.2% | GERKENS UN PARTNERI ↑ 8.7% | AUSEKLĪTIS ↑ 0.6% | LAIMA ↑ 5.6% | LATVIJAS BALZAMS ↑ 10.1% | DZINTARS ↓ 2.8% | LATTELEKOM ↑ 10.3% | ALDARIS ↑ 7.9% | OGRES TRIKOTĀŽA ↓ 4.2% | BANKA BALTIJA ↑ 99.5%
+        </div>
+    </div>
+    <div class="props">
+        <h2>💼 Rekvizīti:</h2>
+        <p>VHS, Retro mobilie telefoni ('ķieģeļi'), portfeļi bez dolāriem, vizītkartes, auto magnetolas.</p>
+    </div>
+    <div class="music">
+        <h2>🎧 Mūzika pa taisno no kasetēm, nekādu vinilu!</h2>
+        <p>Vanilla Ice, Dr Alban, Madonna, Ace of Base, Scooter, BSB, un citi 90. gadu Radio SWH granti un hiti.</p>
+        <p>
+            <a href="https://open.spotify.com/playlist/37i9dQZF1E4tNm8LT2j6fz"
+               target="_blank"
+               style="text-decoration: none; font-weight: bold;"
+               class="blink-link">
+               Klausies 90. gadu hitus šeit
+            </a>
+        </p>
+    </div>
+
+    <div class="kids" style="padding:30px 20px; background:rgba(255,255,0,0.1); margin:20px auto; border-radius:10px; max-width:800px; border:3px dashed #00ff00;">
+        <h2>90. gadu atmosfēra arī bērniem</h2>
+        <p style="margin-top:20px;">
+            Spilgtas krāsas T-krekli,  džinsu vestes vai jakas, ērti sportiski apavi. Supervaroņu iedvesmoti ,jo krāsaināk, jo labāk!
+        </p>
+        <p style="margin-top: 20px;">
+           <a href="https://www.google.com/search?newwindow=1&sca_esv=7f987530ecd4a166&sxsrf=AHTn8zozjT5-fX3UvWSdPsvZV4Ca7BL5ig:1741440222771&q=90s+kids+fashion&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBpcx8kZB4NRoUjdgt8WwoMs7jebc2P25mD9bLva5PWN4JRBoRqueQxRpdV36vaPcFZfewy9D9ba1w7DAi_8GwWEwSjWtoXdLIKWcfZYxqcKMkOjKiiyfJoLKOgK2P-y0hdS0HEcrCGjUnt_6uQrbLQeXE9dF&sa=X&ved=2ahUKEwiyy4CvyvqLAxVyGRAIHQZkEG0QtKgLegQIEBAB&biw=1536&bih=695&dpr=1.25" target="_blank" style="text-decoration: none; font-weight: bold;" class="blink-link">90s kids fashion</a>
+        </p>
+    </div>
+
+    <div class="countdown" id="countdown"></div>
+    <div class="rsvp">
+        <h2>Pieteikšanās līdz 22. martam</h2>
+        <button onclick="this.textContent = (this.textContent === 'Pievienoties ballītei' ? 'Piezvani Herim' : 'Pievienoties ballītei')">Pievienoties ballītei</button>
+    </div>
+    <div class="footer">
+        © 2025 90. gadu Korporatīvā Ballīte | WALLSTREET'95
+    </div>
+</body>
+</html>
