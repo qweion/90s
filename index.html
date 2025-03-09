@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>90. gadu korpo ratīvā ballīte</title>
+    <title>90. gadu korporatīvā ballīte</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
         body {
@@ -24,7 +24,8 @@
             color: #ff00ff;
         }
         .wordart {
-            font-size: 36px;
+            /* smaller font size for 'KORPORATĪVĀS' note: previously was 36px */
+            font-size: 31px;
             font-weight: bold;
             text-transform: uppercase;
             color: #ffcc00;
@@ -114,6 +115,34 @@
         .blink-link {
             animation: colorBlink 1s infinite;
         }
+        /* Modal styling */
+        #imageModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #imageModal img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 3px solid #ff00ff;
+            border-radius: 10px;
+        }
+        #imageModal .closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
     </style>
     <script>
         function countdown() {
@@ -127,10 +156,27 @@
                 document.getElementById('countdown').innerHTML = `Atlikušais laiks līdz ballītei:</br>${days} dienas, ${hours} stundas, ${minutes} minūtes`;
             }, 1000);
         }
+        
+        // Functions for opening/closing image modal
+        function openImageModal(src) {
+          const modal = document.getElementById('imageModal');
+          const modalImg = document.getElementById('modalImg');
+          modalImg.src = src;
+          modal.style.display = 'flex';
+        }
+        function closeImageModal() {
+          document.getElementById('imageModal').style.display = 'none';
+        }
     </script>
 </head>
 <body onload="countdown()">
-    <div class="hero">Laipni lūgti uz <span class="wordart">90. gadu korporatīvās ballītes</span> banketu </br></br> ģērbies asi, tirgo gudri, svini ar vērienu!</div>
+    <!-- Modal structure -->
+    <div id="imageModal">
+       <span class="closeBtn" onclick="closeImageModal()">&times;</span>
+       <img id="modalImg" src="" alt="Enlarged image" />
+    </div>
+
+    <div class="hero">Laipni lūgti uz <span class="wordart">90. gadu korporatīvās ballītes</span> banketu </br></br> ģērbies asi tirgo gudri svini ar vērienu!</div>
     <div class="banner">!! Never Stop Panicking !!</div>
     <div class="details">
         <h2>📅 Datums: 29. marts</h2>
@@ -143,9 +189,9 @@
         <p><strong>💃 Dāmas:</strong> Spēcīgi kostīmi ar svārkiem vai biksēm, lielas pērļu kaklarotas. Modē crop tops, slip kleitas, oversize džemperi un zemas jostas ar izteiksmīgiem dizainiem. Stils uzsver individualitāti un brīvību, ļaujot eksperimentēt ar aksesuāriem un unikāliem detaļu akcentiem. Matu laka "vējš-mūs-nebiedē" stilā.</p>
         <!-- Jauna rinda ar attēliem -->
         <div style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-          <!-- Piemērs, aizstāj ar saviem failu nosaukumiem -->
-          <img src="img/pink_party.webp" alt="90. gadu vīriešu stils" style="max-width:45%; border: 2px solid #ff00ff; border-radius: 10px;">
-          <img src="img/lady_in_red.webp" alt="90. gadu dāmu stils" style="max-width:45%; border: 2px solid #ff00ff; border-radius: 10px;">
+																 
+          <img src="img/pink_party.webp" alt="90. gadu vīriešu stils" style="max-width:45%; border: 2px solid #ff00ff; border-radius: 10px; cursor:pointer;" onclick="openImageModal('img/pink_party.webp')">
+          <img src="img/lady_in_red.webp" alt="90. gadu dāmu stils" style="max-width:45%; border: 2px solid #ff00ff; border-radius: 10px; cursor:pointer;" onclick="openImageModal('img/lady_in_red.webp')">
         </div>
         <p style="margin-top: 20px;">Papildu iedvesmai:</br></br>
           <a href="https://www.google.com/search?newwindow=1&sca_esv=08684afdbf066af7&sxsrf=AHTn8zp0QPOEy75rESZQJQsIyBTHurssGA:1741439165787&q=90s+corporate+fashion&udm=2&fbs=ABzOT_CWdhQLP1FcmU5B0fn3xuWpA-dk4wpBWOGsoR7DG5zJBpcx8kZB4NRoUjdgt8WwoMs7jebc2P25mD9bLva5PWN4JRBoRqueQxRpdV36vaPcFZfewy9D9ba1w7DAi_8GwWEwSjWtoXdLIKWcfZYxqcKMkOjKiiyfJoLKOgK2P-y0hdS0HEcrCGjUnt_6uQrbLQeXE9dF&sa=X&ved=2ahUKEwjRrP-2xvqLAxXlFBAIHZ4SJ-8QtKgLegQIDxAB&biw=1536&bih=695&dpr=1.25" target="_blank" class="blink-link" style="text-decoration: none; font-weight: bold;">
@@ -191,7 +237,7 @@
         <button onclick="this.textContent = (this.textContent === 'Pievienoties ballītei' ? 'Piezvani Herim' : 'Pievienoties ballītei')">Pievienoties ballītei</button>
     </div>
     <div class="footer">
-        © 2025 90. gadu Korporatīvā Ballīte | WALLSTREET'95
+        © 2025 90. gadu Korporatīvā Ballīte | WALLSTREET'97 | Powered by the .COM boom investment corp
     </div>
 </body>
 </html>
